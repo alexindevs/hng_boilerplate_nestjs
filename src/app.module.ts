@@ -4,6 +4,7 @@ import { APP_PIPE } from '@nestjs/core';
 import serverConfig from '../config/server.config';
 import * as Joi from 'joi';
 import { LoggerModule } from 'nestjs-pino';
+import { AuthenticationModule } from './modules/authentication/authentication.module';
 
 @Module({
   providers: [
@@ -41,6 +42,7 @@ import { LoggerModule } from 'nestjs-pino';
       }),
     }),
     LoggerModule.forRoot(),
+    AuthenticationModule,
   ],
 })
 export class AppModule {}
